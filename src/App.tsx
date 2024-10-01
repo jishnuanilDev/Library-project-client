@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import BookForm from './components/bookForm';
+import MemberForm from './components/memberForm';
+import HomePage from './components/homePage';
+import BorrowForm from './components/borrowForm';
+import ReturnForm from './components/returnForm';
+import MyBooks from './components/myBooks';
+import MemberIdform from './components/memberIdform';
+import AdminHome from './components/AdminUserSide';
+import AdminBooks from './components/AdminBooks';
+import './styles/style.css'
+import { Routes,Route,Link } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+<>
+
+<Routes>
+  <Route path='/' element={<HomePage/>}></Route>
+
+  <Route path='/addBook' element={<BookForm/>}></Route>
+  <Route path='/addMember' element={<MemberForm/>}></Route>
+  <Route path='/borrow' element={<BorrowForm/>}></Route>
+  <Route path='/return' element={<ReturnForm/>}></Route>
+  <Route path='/myBooks' element={<MemberIdform/>}></Route>
+
+  <Route path='/admin' element={<AdminHome/>}></Route>
+  <Route path='/adminBooks' element={<AdminBooks/>}></Route>
+
+</Routes>
+
+</>
   );
 }
 
